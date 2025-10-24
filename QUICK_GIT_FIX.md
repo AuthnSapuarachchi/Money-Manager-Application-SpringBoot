@@ -1,6 +1,7 @@
 # 🚀 Quick Git Fix - Clean Start Method
 
 ## ⚠️ The Problem
+
 Your Git history contains secrets (Brevo API key) that GitHub is blocking.
 
 ## ✅ EASIEST SOLUTION (Recommended)
@@ -8,6 +9,7 @@ Your Git history contains secrets (Brevo API key) that GitHub is blocking.
 Follow these steps **exactly**:
 
 ### Step 1: Backup your current work
+
 ```powershell
 # Your code is already safe, just making sure
 cd ..
@@ -16,12 +18,14 @@ cd "MoneyManager - Authn"
 ```
 
 ### Step 2: Remove Git history
+
 ```powershell
 # Delete the .git folder (removes all history)
 Remove-Item -Recurse -Force .git
 ```
 
 ### Step 3: Initialize fresh Git repository
+
 ```powershell
 # Start fresh
 git init
@@ -30,6 +34,7 @@ git commit -m "Initial commit with secure configuration"
 ```
 
 ### Step 4: Add remote and push
+
 ```powershell
 # Connect to GitHub (use the existing repo)
 git remote add origin https://github.com/AuthnSapuarachchi/Money-Manager-Application-SpringBoot.git
@@ -39,14 +44,14 @@ git branch -M main
 git push -u origin main --force
 ```
 
-##  Alternative: Use GitHub's Allow Secret Option
+## Alternative: Use GitHub's Allow Secret Option
 
 If you want to keep your history:
 
 1. Click this link (from the error message):
    https://github.com/AuthnSapuarachchi/Money-Manager-Application-SpringBoot/security/secret-scanning/unblock-secret/34JVYe8fWyeDkYKOUmBCzJ2LaBv
 
-2. Click "Allow secret" 
+2. Click "Allow secret"
 
 3. Then push normally:
    ```powershell
@@ -54,6 +59,7 @@ If you want to keep your history:
    ```
 
 ⚠️ **WARNING**: This exposes your Brevo API key publicly. You should:
+
 - Regenerate your Brevo API key after pushing
 - Update your `.env` file with the new key
 
